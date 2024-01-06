@@ -1,0 +1,10 @@
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDemo.csproj.AssemblyReference.cache
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDemo.csproj.GenerateResource.cache
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDemo.csproj.CoreCompileInputs.cache
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
