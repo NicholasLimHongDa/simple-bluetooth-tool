@@ -61,6 +61,27 @@ namespace WindowsFormsApp1
             return true;
         }
 
+        private void BluetoothRefresh()
+        {
+            // Bluetoothデバイスの探索を行う。
+            // 引数：
+            // int maxDevices    : 探索するデバイスの最大数。指定の数で探索を打ち切る。
+            // bool authenticated: trueだと認証済み（ペアリング済み）のデバイス、falseだと認証していないデバイスを結果に含める。
+            // bool remembered   : trueだとホストに記録済みのデバイスのみを結果に含める（認証したことのあるデバイス以外無視すると同じ？）
+            // bool unknown      : falseだと詳細のわからないデバイスを結果に含めない。
+
+            // 未ペアリングのデバイスを探索し、結果を返す
+            BluetoothDeviceInfo[] devices_nonpaired = bc.DiscoverDevices(32, false, false, true);
+            // ペアリング済みのデバイスを探索し、結果を返す
+            BluetoothDeviceInfo[] devices_paired = bc.DiscoverDevices(32, true, false, false);
+
+            bindingSource_nonPair.DataSource = devices_nonpaired;
+            bindingSource_Paired.DataSource = devices_paired;
+            // ListBoxの設定
+            listBoxNonPair.DisplayMember = "DeviceName";
+            listBoxPaired.DisplayMember = "DeviceName";
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -74,6 +95,15 @@ namespace WindowsFormsApp1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonPairing_Click(object sender, EventArgs e)
+        {
+            BluetoothDeviceInfo deviceInfo = (BluetoothDeviceInfo)listBoxNonPair.SelectedItem;
+            if (deviceInfo != null)
+            {
+                Pairing(deviceInfo);
+            }
         }
     }
 }

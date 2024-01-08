@@ -8,3 +8,6 @@ E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDem
 E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDemo.csproj.CoreCompileInputs.cache
 E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\bin\Debug\InTheHand.Net.Personal.dll
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\bin\Debug\InTheHand.Net.Personal.xml
+E:\Workspace\BluetoothDemo\BluetoothDemo\WindowsFormsApp1\obj\Debug\BluetoothDemo.csproj.CopyComplete

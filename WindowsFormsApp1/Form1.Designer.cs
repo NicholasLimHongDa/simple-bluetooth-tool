@@ -33,10 +33,12 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxPaired = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.buttonPairing = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxNonPair
             // 
+            this.listBoxNonPair.DataSource = this.listBoxNonPair.CustomTabOffsets;
             this.listBoxNonPair.FormattingEnabled = true;
             this.listBoxNonPair.ItemHeight = 16;
             this.listBoxNonPair.Location = new System.Drawing.Point(23, 46);
@@ -76,11 +78,23 @@ namespace WindowsFormsApp1
             this.label2.Text = "Paired";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // buttonPairing
+            // 
+            this.buttonPairing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.buttonPairing.Location = new System.Drawing.Point(23, 404);
+            this.buttonPairing.Name = "buttonPairing";
+            this.buttonPairing.Size = new System.Drawing.Size(165, 34);
+            this.buttonPairing.TabIndex = 4;
+            this.buttonPairing.Text = "Pairing";
+            this.buttonPairing.UseVisualStyleBackColor = true;
+            this.buttonPairing.Click += new System.EventHandler(this.buttonPairing_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonPairing);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxPaired);
             this.Controls.Add(this.label1);
@@ -98,6 +112,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBoxPaired;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonPairing;
     }
 }
 
