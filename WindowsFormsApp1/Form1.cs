@@ -63,21 +63,22 @@ namespace WindowsFormsApp1
 
         private void BluetoothRefresh()
         {
-            // Bluetoothデバイスの探索を行う。
-            // 引数：
-            // int maxDevices    : 探索するデバイスの最大数。指定の数で探索を打ち切る。
-            // bool authenticated: trueだと認証済み（ペアリング済み）のデバイス、falseだと認証していないデバイスを結果に含める。
-            // bool remembered   : trueだとホストに記録済みのデバイスのみを結果に含める（認証したことのあるデバイス以外無視すると同じ？）
-            // bool unknown      : falseだと詳細のわからないデバイスを結果に含めない。
+            // Searches for nearby Bluetooth devices
+            // Arguments：
+            // int maxDevices    : Maximum number of discoverable devices
+            // bool authenticated: True if you want to limit the search for devices that were paired before、otherwise false for unpaired devices
+            // bool remembered   : True if you want to limit the search to devices that the host has recognized previously (unsure if it overrides 'authenticated')
+            // bool unknown      : If this is false, ignores devices that do not broadcast details
 
-            // 未ペアリングのデバイスを探索し、結果を返す
+            // Returns unpaired devices
             BluetoothDeviceInfo[] devices_nonpaired = bc.DiscoverDevices(32, false, false, true);
-            // ペアリング済みのデバイスを探索し、結果を返す
+            // Returns paired devices
             BluetoothDeviceInfo[] devices_paired = bc.DiscoverDevices(32, true, false, false);
 
-            bindingSource_nonPair.DataSource = devices_nonpaired;
-            bindingSource_Paired.DataSource = devices_paired;
-            // ListBoxの設定
+            notPairedBindingSource.DataSource = devices_nonpaired;
+            pairedBindingSource.DataSource = devices_paired;
+
+            // ListBox
             listBoxNonPair.DisplayMember = "DeviceName";
             listBoxPaired.DisplayMember = "DeviceName";
         }
@@ -104,6 +105,11 @@ namespace WindowsFormsApp1
             {
                 Pairing(deviceInfo);
             }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            BluetoothRefresh();
         }
     }
 }
