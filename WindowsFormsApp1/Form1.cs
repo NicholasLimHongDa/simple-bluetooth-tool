@@ -58,6 +58,21 @@ namespace WindowsFormsApp1
                 }
             }
 
+            // Services handler
+            foreach (Guid serviceGuid in serviceGuidList)
+            {
+                try
+                {
+                    // Initializes the services broadcasted by the Bluetooth device
+                    deviceInfo.SetServiceState(serviceGuid, true, true);
+                }
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine(ex.Message);
+                    Console.Error.WriteLine(ex.StackTrace);
+                }
+            }
+
             return true;
         }
 
@@ -83,7 +98,7 @@ namespace WindowsFormsApp1
             listBoxPaired.DisplayMember = "DeviceName";
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox_Click(object sender, EventArgs e)
         {
 
         }

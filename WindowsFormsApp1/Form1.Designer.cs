@@ -33,13 +33,15 @@ namespace WindowsFormsApp1
             this.listBoxNonPair = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxPaired = new System.Windows.Forms.ListBox();
-            this.notPairedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pairedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.notPairedBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.buttonPairing = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).BeginInit();
+            this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pairedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxNonPair
@@ -51,13 +53,13 @@ namespace WindowsFormsApp1
             this.listBoxNonPair.Name = "listBoxNonPair";
             this.listBoxNonPair.Size = new System.Drawing.Size(230, 292);
             this.listBoxNonPair.TabIndex = 0;
-            this.listBoxNonPair.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.listBoxNonPair.Click += new System.EventHandler(this.listBox_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label1.Location = new System.Drawing.Point(20, 9);
+            this.label1.Location = new System.Drawing.Point(18, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 25);
             this.label1.TabIndex = 1;
@@ -73,14 +75,15 @@ namespace WindowsFormsApp1
             this.listBoxPaired.Name = "listBoxPaired";
             this.listBoxPaired.Size = new System.Drawing.Size(230, 292);
             this.listBoxPaired.TabIndex = 2;
-            // 
-            // notPairedBindingSource
-            // 
-            this.notPairedBindingSource.DataSource = typeof(WindowsFormsApp1.Form1);
+            this.listBoxPaired.Click += new System.EventHandler(this.listBox_Click);
             // 
             // pairedBindingSource
             // 
             this.pairedBindingSource.DataSource = typeof(WindowsFormsApp1.Form1);
+            // 
+            // notPairedBindingSource
+            // 
+            this.notPairedBindingSource.DataSource = typeof(WindowsFormsApp1.Form1);
             // 
             // label2
             // 
@@ -115,11 +118,30 @@ namespace WindowsFormsApp1
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
+            // propertyGrid1
+            // 
+            this.propertyGrid1.Location = new System.Drawing.Point(495, 46);
+            this.propertyGrid1.Name = "propertyGrid1";
+            this.propertyGrid1.Size = new System.Drawing.Size(293, 365);
+            this.propertyGrid1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(490, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 25);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Properties";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonPairing);
             this.Controls.Add(this.label2);
@@ -128,8 +150,8 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.listBoxNonPair);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pairedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +167,8 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.BindingSource notPairedBindingSource;
         private System.Windows.Forms.BindingSource pairedBindingSource;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.PropertyGrid propertyGrid1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
