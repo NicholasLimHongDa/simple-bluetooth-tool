@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             this.buttonPairing = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.propertyGrid1 = new System.Windows.Forms.PropertyGrid();
-            this.label3 = new System.Windows.Forms.Label();
+            this.button_remove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pairedBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -47,11 +47,12 @@ namespace WindowsFormsApp1
             // listBoxNonPair
             // 
             this.listBoxNonPair.DataSource = this.listBoxNonPair.CustomTabOffsets;
+            this.listBoxNonPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxNonPair.FormattingEnabled = true;
-            this.listBoxNonPair.ItemHeight = 16;
+            this.listBoxNonPair.ItemHeight = 25;
             this.listBoxNonPair.Location = new System.Drawing.Point(23, 46);
             this.listBoxNonPair.Name = "listBoxNonPair";
-            this.listBoxNonPair.Size = new System.Drawing.Size(230, 292);
+            this.listBoxNonPair.Size = new System.Drawing.Size(230, 304);
             this.listBoxNonPair.TabIndex = 0;
             this.listBoxNonPair.Click += new System.EventHandler(this.listBox_Click);
             // 
@@ -69,11 +70,12 @@ namespace WindowsFormsApp1
             // listBoxPaired
             // 
             this.listBoxPaired.DataSource = this.pairedBindingSource;
+            this.listBoxPaired.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPaired.FormattingEnabled = true;
-            this.listBoxPaired.ItemHeight = 16;
+            this.listBoxPaired.ItemHeight = 25;
             this.listBoxPaired.Location = new System.Drawing.Point(259, 46);
             this.listBoxPaired.Name = "listBoxPaired";
-            this.listBoxPaired.Size = new System.Drawing.Size(230, 292);
+            this.listBoxPaired.Size = new System.Drawing.Size(230, 304);
             this.listBoxPaired.TabIndex = 2;
             this.listBoxPaired.Click += new System.EventHandler(this.listBox_Click);
             // 
@@ -98,10 +100,11 @@ namespace WindowsFormsApp1
             // 
             // buttonPairing
             // 
+            this.buttonPairing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonPairing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.buttonPairing.Location = new System.Drawing.Point(23, 404);
             this.buttonPairing.Name = "buttonPairing";
-            this.buttonPairing.Size = new System.Drawing.Size(165, 34);
+            this.buttonPairing.Size = new System.Drawing.Size(123, 34);
             this.buttonPairing.TabIndex = 4;
             this.buttonPairing.Text = "Pairing";
             this.buttonPairing.UseVisualStyleBackColor = true;
@@ -109,10 +112,11 @@ namespace WindowsFormsApp1
             // 
             // buttonRefresh
             // 
+            this.buttonRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.buttonRefresh.Location = new System.Drawing.Point(194, 404);
+            this.buttonRefresh.Location = new System.Drawing.Point(152, 404);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(165, 34);
+            this.buttonRefresh.Size = new System.Drawing.Size(123, 34);
             this.buttonRefresh.TabIndex = 5;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -120,27 +124,29 @@ namespace WindowsFormsApp1
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Location = new System.Drawing.Point(495, 46);
+            this.propertyGrid1.Location = new System.Drawing.Point(495, 12);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(293, 365);
+            this.propertyGrid1.Size = new System.Drawing.Size(279, 410);
             this.propertyGrid1.TabIndex = 6;
             // 
-            // label3
+            // button_remove
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(490, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Properties";
+            this.button_remove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_remove.Location = new System.Drawing.Point(281, 404);
+            this.button_remove.Name = "button_remove";
+            this.button_remove.Size = new System.Drawing.Size(123, 34);
+            this.button_remove.TabIndex = 8;
+            this.button_remove.Text = "Remove";
+            this.button_remove.UseVisualStyleBackColor = true;
+            this.button_remove.Click += new System.EventHandler(this.button_remove_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_remove);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonPairing);
@@ -149,7 +155,7 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxNonPair);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bluetooth";
             ((System.ComponentModel.ISupportInitialize)(this.pairedBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.notPairedBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -168,7 +174,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.BindingSource pairedBindingSource;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.PropertyGrid propertyGrid1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_remove;
     }
 }
 

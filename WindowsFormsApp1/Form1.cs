@@ -28,6 +28,8 @@ namespace WindowsFormsApp1
             bc.InquiryLength = new TimeSpan(0, 0, 5);
             bcAsync.InquiryLength = new TimeSpan(0, 0, 5);
 
+            BluetoothRefresh();
+
             // BluetoothWin32Authentication authenticator = new BluetoothWin32Authentication(Win32AuthCallbackHandler);
         }
 
@@ -76,6 +78,11 @@ namespace WindowsFormsApp1
             return true;
         }
 
+        private bool RemoveDevice(BluetoothDeviceInfo deviceInfo)
+        {
+            return BluetoothSecurity.RemoveDevice(deviceInfo.DeviceAddress);
+        }
+
         private void BluetoothRefresh()
         {
             // Searches for nearby Bluetooth devices
@@ -98,9 +105,14 @@ namespace WindowsFormsApp1
             listBoxPaired.DisplayMember = "DeviceName";
         }
 
+        private void SetDeviceInfo(BluetoothDeviceInfo deviceInfo)
+        {
+            propertyGrid1.SelectedObject = deviceInfo;
+        }
+
         private void listBox_Click(object sender, EventArgs e)
         {
-
+            SetDeviceInfo((BluetoothDeviceInfo)((ListBox)sender).SelectedItem);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -125,6 +137,15 @@ namespace WindowsFormsApp1
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             BluetoothRefresh();
+        }
+
+        private void button_remove_Click(object sender, EventArgs e)
+        {
+            BluetoothDeviceInfo deviceInfo = (BluetoothDeviceInfo)listBoxPaired.SelectedItem;
+            if (deviceInfo != null)
+            {
+                RemoveDevice(deviceInfo);
+            }
         }
     }
 }
